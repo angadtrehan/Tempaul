@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: rgb(168, 168, 168);
+    font-family: 'Poppins', sans-serif;
+    background-image: url(https://source.unsplash.com/random/1600x900/?night,city,lights);
+}
+
+
+.card {
+    background: #000000c6;
+    color: white;
+    border-radius: 30px;
+    padding: 2em;
+    width: 100%;
+    max-width: 450px;
+    margin: 1.5em;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 8px 15px 10px rgba(174, 174, 174, 0.165);
+    box-shadow: -15px -8px 40px 0 rgba(221, 221, 221, 0.158) inset;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box {
+    border: none;
+    outline: none;
+    padding: 0.7em 1em;
+    border-radius: 15px;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    width: 80%;
+    font-size: 90%;
+}
+
+button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    height: 3.3em;
+    width: 3.3em;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #7c7c7c6b;
+}
+
+h1.temp {
+    margin: -5px;
+}
