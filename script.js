@@ -1,15 +1,16 @@
-let weather = {
-    "apiKey" : "4a1beb41247156e9f6736bfa97f3ed07",
-    "geoCodeApiKey" : "8680a2f8058ca8c0fa78dcc9d68b46c2",
-    "urlPt1" : "https://dummyapiurl.com/",
-    "urlPt2" : "/apiKey",
+const weather = {
+    apiKey:"24e00f92c6f1cb0b2b67184fcc96646e",
 
     fetchWeater: (city) => {
-        fetch("https://dummyapiurl.com/")
+        const url = `http://api.weatherstack.com/current?access_key=${weather.apiKey}&query=${city}`
+        console.log(url)
+        fetch(url)
         .then((response) => response.json())
-        .then((data) => console.log(data))
-        document.querySelector(".city").innerText = "Weather in your mom"
-        document.body.style.backgroundImage = "url(https://source.unsplash.com/random/1600x900/?mayer)"
+        .then((data) => weather.displayWeather(data))
+    },
+
+    displayWeather: (data) => {
+        console.log(data.location.name);
     }
 }
 
