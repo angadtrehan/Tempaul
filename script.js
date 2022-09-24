@@ -10,7 +10,21 @@ const weather = {
     },
 
     displayWeather: (data) => {
-        console.log(data.location.name);
+        const name = data.location.name;
+        const temperature = data.current.temperature;
+        const weather_descriptions = data.current.weather_descriptions[0];
+        const humidity = data.current.humidity;
+        const wind_speed = data.current.wind_speed;
+        const feelsLike = data.current.feelslike;
+
+        console.log(name,temperature, feelsLike, weather_descriptions, humidity, wind_speed)
+
+        document.querySelector(".city").innerText = "Weather for " + name;
+        document.querySelector(".temp").innerText = temperature + "°C";
+        document.querySelector(".real_feel").innerText = "Feels like " + feelsLike + "°C";
+        document.querySelector(".description").innerText = weather_descriptions;
+        document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
+        document.querySelector(".wind-speed").innerText = "Wind speed: " + wind_speed + "km/h";
     }
 }
 
