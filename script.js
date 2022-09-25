@@ -1,12 +1,15 @@
 const weather = {
     apiKey:"24e00f92c6f1cb0b2b67184fcc96646e",
 
-    fetchWeater: (city) => {
+    fetchWeather: (city) => {
+        city = city.replace(/\s/g, "%20")
         const url = `http://api.weatherstack.com/current?access_key=${weather.apiKey}&query=${city}`
         console.log(url)
         fetch(url)
         .then((response) => response.json())
         .then((data) => weather.displayWeather(data))
+        .then((data) => console.log(data))
+        .catch(() => window.alert("Something went wrong, try searching for another location!"))
     },
 
     displayWeather: (data) => {
@@ -24,7 +27,7 @@ const weather = {
         document.querySelector(".real_feel").innerText = "Feels like " + feelsLike + "°C";
         document.querySelector(".description").innerText = weather_descriptions;
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
-        document.querySelector(".wind-speed").innerText = "Wind speed: " + wind_speed + "km/h";
+        document.querySelector(".wind-speed").innerText = "Wind speed: " + wind_speed + " km/h";
     }
 }
 
