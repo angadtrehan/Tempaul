@@ -6,12 +6,12 @@ body {
     margin: 0;
     background: rgb(168, 168, 168);
     font-family: 'Poppins', sans-serif;
-    background-image: url(https://source.unsplash.com/random/1600x1600/?night,city,lights);
+    background-image: url(https://source.unsplash.com/random/1600x1600/?New%20Delhi);
 }
 
 
 .card {
-    background: #000000c6;
+    background: #000000a9;
     color: white;
     border-radius: 30px;
     padding: 2em;
@@ -19,8 +19,19 @@ body {
     max-width: 450px;
     margin: 1.5em;
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     box-shadow: 0 8px 15px 10px rgba(174, 174, 174, 0.165);
     box-shadow: -15px -8px 40px 0 rgba(221, 221, 221, 0.158) inset;
+}
+
+.flex {
+    display: flex;
+    align-items: baseline;
+}
+
+.real_feel {
+    font-weight: lighter;
+    font-style: italic;
 }
 
 .search {
@@ -58,6 +69,10 @@ button:hover {
     background: #7c7c7c6b;
 }
 
-h1.temp {
-    margin: -5px;
+.temp {
+    margin: 0px 20px 0px 0px;
+}
+
+.weather.loading {
+    display: none;
 }

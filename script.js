@@ -28,8 +28,33 @@ const weather = {
         document.querySelector(".description").innerText = weather_descriptions;
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind-speed").innerText = "Wind speed: " + wind_speed + " km/h";
+
+        document.querySelector(".weather").classList.remove("loading");
+        searchName = name.replace(/\s/g, "%20")
+        document.body.style.backgroundImage = "url('https://source.unsplash.com/random/1600x1600/?"+ searchName + "')"
+
+    },
+
+    search: () => {
+        weather.fetchWeather(document.querySelector(".search-box").value);
     }
 }
+
+document.querySelector(".search button").addEventListener("click", () => {
+    weather.search();
+})
+
+document.querySelector(".search-box").addEventListener("keyup", (event) => {
+    if (event.key == "Enter") {
+        weather.search();
+    };
+
+    if (event.key == "Escape") {
+        document.querySelector(".search-box").value = "";
+    }
+})
+
+// The following is done on load
 
 
 
